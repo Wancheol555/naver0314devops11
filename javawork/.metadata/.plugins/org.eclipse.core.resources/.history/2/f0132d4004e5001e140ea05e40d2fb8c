@@ -37,7 +37,7 @@ public class Ex14_ForMunje {
 		}
 		
 		System.out.println("입력된 점수 갯수 :" +count);
-		System.out.printf("입력된 점수 갯수 :%d\n", count);
+		System.out.printf("입력된 점수 갯수: %d", count);
 		System.out.println("총 합계 :"+sum);
 
 	}

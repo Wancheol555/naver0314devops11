@@ -1,7 +1,5 @@
 package day0318;
 
-import java.util.Scanner;
-
 public class Ex14_ForMunje {
 
 	public static void main(String[] args) {
@@ -20,27 +18,7 @@ public class Ex14_ForMunje {
 		 * 입력한 점수 갯수 : 4
 		 * 총 합계 : 310
 		 */
-		
-		Scanner sc=new Scanner(System.in);
-		int score=0, count=0, sum=0;
-		for(int i=1;i<=5;i++) {
-			
-			System.out.println("점수는?");
-			score=sc.nextInt();
-			
-			if(score<1 || score>100)
-				continue;
-			count++;
-			sum = sum+score;
-			
-				
-		}
-		
-		System.out.println("입력된 점수 갯수 :" +count);
-		System.out.printf("입력된 점수 갯수 :%d\n", count);
-		System.out.println("총 합계 :"+sum);
 
 	}
-	
 
 }
