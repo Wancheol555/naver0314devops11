@@ -29,7 +29,7 @@ public class Ex14_ForMunje {
 			score=sc.nextInt();
 			
 			if(score<1 || score>100)
-				continue;
+				continue; //i++로 이동
 			count++;
 			sum = sum+score;
 			
