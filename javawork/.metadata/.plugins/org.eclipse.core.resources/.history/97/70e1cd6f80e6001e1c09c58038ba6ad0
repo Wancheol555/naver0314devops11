@@ -1,0 +1,57 @@
+package day0320;
+
+import java.util.Scanner;
+
+public class Ex10_ArraySearchStartsWith {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String []members= {"가민","가구","가준","나민","다민","라민","마민","바민","사민","아민","자민"};
+		/*
+		 * 검색할 이름은? 가
+		 * 1번째 : ㅇㅇ
+		 * 5번째 : ㅇㅇ
+		 * 총 2명 검색
+		 * 
+		 * 검색할 이름은? 박이
+		 * "박이"로 시작하는 멤버는 없습니다
+		 * 
+		 * 검색할 이름은? q
+		 * **검색을 종료합니다**
+		 */
+		int searchIndex;
+		String searchName;
+		while(true) 
+		{
+			searchIndex=-1;
+			System.out.println("검색할 이름을 입력하세요");
+			searchName=sc.nextLine();
+			if(searchName.equalsIgnoreCase("q"))
+			{
+				System.out.println("검색을 종료합니다");
+				break;
+			}
+			
+			for(int i=0;i<members.length;i++)
+			{
+				if(searchName.equals(members[i]))
+				{
+					searchIndex=i;
+					break;
+				}
+			
+			}
+			
+		if(searchIndex==-1)
+			System.out.println("\t"+searchName+"은 명단에 없습니다");
+		else
+			System.out.println(members.length);
+			System.out.println("\t"+searchName+"은"+(searchIndex+1)+"번째에 있습니다");
+		System.out.println();
+		}
+		
+
+	}
+
+}
