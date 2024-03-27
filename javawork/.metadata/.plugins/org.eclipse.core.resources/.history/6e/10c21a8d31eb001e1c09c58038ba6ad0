@@ -1,0 +1,33 @@
+package study0325;
+
+class BankAccount
+{
+	protected String number;
+	protected String password;
+	protected String name;
+	protected long balance;
+
+	public BankAccount(String number, String password, String name, long balance) {
+
+		this.number = number;
+		this.password = password;
+		this.name = name;
+		this.balance = balance;
+
+	}
+
+	public void deposit()
+	{
+
+	}
+
+	public void withdraw()
+	{
+
+	}
+	public void printAccount()
+	{
+
+	}
+
+}

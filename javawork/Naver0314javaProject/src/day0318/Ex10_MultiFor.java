@@ -9,7 +9,7 @@ public class Ex10_MultiFor {
 			System.out.println("Hello!");
 			for(int j=1;j<=3;j++)
 			{
-				System.out.println("\tKitty~");
+				System.out.print("\tKitty~");
 			}
 			System.out.println();
 		}

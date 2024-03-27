@@ -1,0 +1,15 @@
+package day0325;
+
+public class Ex_Intheri {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		SmartPhone2 s1=new SmartPhone2("갤럭시","은색","KT");
+		s1.info();
+		
+		SmartPhone2 s2=new SmartPhone2("아이폰14","핑크색","sk");
+		s2.info();
+		
+	}
+
+}

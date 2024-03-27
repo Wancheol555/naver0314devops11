@@ -22,7 +22,7 @@ public class Ex6_Scanner {
 		
 		System.out.println("이름:"+name);
 		System.out.printf("국어점수:%d점,영어점수:%d점\n",kor,eng);
-		System.out.printf("총점 : %d점,평균:%d90점",kor+eng,(kor+eng)/2);
+		System.out.printf("총점 : %d점,평균:%.1f점",kor+eng,(kor+eng)/2.0);
 	
 		
 				

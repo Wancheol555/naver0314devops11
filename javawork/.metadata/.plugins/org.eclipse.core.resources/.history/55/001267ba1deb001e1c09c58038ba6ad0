@@ -1,0 +1,52 @@
+package day0326;
+
+interface StudyInter
+{
+	public void javaStudy();
+	public void springStudy();
+}
+
+interface PlayInter
+{
+	public void run();
+	public void game();
+}
+
+class MyStudy implements StudyInter
+{
+	@Override
+	public void javaStudy() {
+		// TODO Auto-generated method stub
+		System.out.println("자바공부");
+	}
+	@Override
+	public void springStudy() {
+		// TODO Auto-generated method stub
+		System.out.println("스프링공부");
+	}
+}
+
+class Mypaly implements PlayInter
+{
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		System.out.println("뛰어 놀기");
+	}
+	@Override
+	public void game() {
+		// TODO Auto-generated method stub
+		System.out.println("게임하기");
+	}
+}
+
+public class Ex7_Interface {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		StudyInter s=new MyStudy();
+		s.javaStudy();
+		s.springStudy();
+	}
+
+}

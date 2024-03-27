@@ -1,0 +1,55 @@
+package study0325;
+
+import javax.print.attribute.standard.OutputDeviceAssigned;
+
+class BankAccount
+{
+	protected String number;
+	protected String password;
+	protected String name;
+	protected long balance;
+
+	public BankAccount(String number, String password, String name, long balance) {
+
+		this.number = number;
+		this.password = password;
+		this.name = name;
+		this.balance = balance;
+		
+
+	}
+
+	public void deposit(long inputAccount)
+	{
+		if(inputAccount<=0)
+			System.out.println("0원 이하의 금액을 입금할 수 없습니다");
+		else
+		{
+			System.out.println("=".repeat(50));
+			System.out.println(inputAccount+"원이 입금되었습니다");
+			System.out.println("=".repeat(50));
+			balance+=inputAccount;
+		}
+			
+	}
+
+	public void withdraw(long outputAccount)
+	{
+		if(outputAccount<=0)
+			System.out.println("0원 이하의 금액을 출금할 수 없습니다");
+		else if(outputAccount>=balance)
+			System.out.println("잔액이 부족합니다");
+		else
+		{
+			System.out.println("=".repeat(50));
+			System.out.println(outputAccount+"원이 출금되었습니다");
+			System.out.println("=".repeat(50));
+			balance-=outputAccount;
+		}
+	}
+	public void printAccount()
+	{
+		syso
+	}
+
+}
