@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    table{
+      width: 100%;
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+<table>
+  <script>
+    document.write("<tr>");
+    for (let i = 2; i <= 9; i++) {
+      let 단 = `<th>${i}단</th>`
+      document.write(단);
+    }
+    document.write("</tr>");
+
+
+    for (let i = 1; i <= 9; i++) {
+      document.write("<tr>");
+      for (let j = 2; j <= 9; j++) {
+        let s = `<td>${j} X ${i} = ${i * j}</td>`
+        document.write(s);
+      }
+      document.write("</tr>");
+
+    }
+  </script>
+
+</table>
+
+</body>
+
+</html>
