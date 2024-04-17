@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Diphylleia&family=Gamja+Flower&family=Gowun+Dodum&family=Karla:ital,wght@0,200..800;1,200..800&family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
+  <title>Title</title>
+  <style>
+    body * {
+      font-family: 'Diphylleia';
+    }
+    ul,li{list-style: none;}
+    nav{
+      display: block;
+    }
+    ul{margin-bottom: 30px;}
+    /*menu1*/
+    .menu1 li{
+      background-color: #999;
+      color: white;
+      width: 85px;
+      display: block;
+      margin-bottom: 33px;
+      padding: 8px;
+      transition: width 1.5s;
+    }
+
+    /*menu1의 효과*/
+    .menu1 li:hover{
+      color: #900;
+      letter-spacing: 3px;
+      width: 400px;
+    }
+
+    /*menu2*/
+    .menu2{height: 100px;}
+    .menu2 li{
+      float: left;
+      background-color: dodgerblue;
+      color: yellow;
+      width: 85px;
+      margin-right: 3px;
+      height: 35px;
+      text-align: center;
+      line-height: 35px;
+      transition: height 1.2s;
+    }
+
+    .menu2 li:hover{
+      background-color: aquamarine;
+      height: 100px;
+      color: orange;
+    }
+    /*menu3*/
+    .menu3{height: 100px;}
+    .menu3 li {
+      float: left;
+      background-color: mediumspringgreen;
+      color: yellow;
+      width: 85px;
+      margin-right: 3px;
+      height: 35px;
+      text-align: center;
+      line-height: 35px;
+      transform: rotate(0deg);
+      transition: height 1.2s;
+    }
+
+    .menu3 li:hover{
+      background-color: plum;
+      color: saddlebrown;
+      transform: rotate(45deg);
+    }
+
+    #main_menu.menu4 li{
+      color: #333;
+      background-color: #9c0;
+      width: 150px;
+      display: block;
+      text-align: center;
+      padding: 5px;
+      transition: all 0.3s;
+    }
+    #main_menu.menu4 li:hover{
+      color: #990000;
+      background-color: burlywood;
+      background: url("../image/mycar/mycar13.png") no-repeat;
+      background-size: 30px 30px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<ul class="menu1">
+  <li>Menu01</li>
+  <li>Menu02</li>
+  <li>Menu03</li>
+  <li>Menu04</li>
+  <li>Menu05</li>
+</ul>
+<div style="clear: both;"></div>
+<ul class="menu2">
+  <li>Menu01</li>
+  <li>Menu02</li>
+  <li>Menu03</li>
+  <li>Menu04</li>
+  <li>Menu05</li>
+</ul>
+<div style="clear: both;"></div>
+<ul class="menu3">
+  <li>Menu01</li>
+  <li>Menu02</li>
+  <li>Menu03</li>
+  <li>Menu04</li>
+  <li>Menu05</li>
+</ul>
+<div style="clear: both;"></div>
+<nav id="main_menu">
+  <ul class="menu4">
+    <li>Menu01</li>
+    <li>Menu02</li>
+    <li>Menu03</li>
+    <li>Menu04</li>
+    <li>Menu05</li>
+  </ul>
+</nav>
+
+</body>
+</html>
