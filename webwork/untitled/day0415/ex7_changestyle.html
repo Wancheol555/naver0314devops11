@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Diphylleia&family=Gamja+Flower&family=Gowun+Dodum&family=Karla:ital,wght@0,200..800;1,200..800&family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <title>Title</title>
+</head>
+<body>
+<select id="selcolor">
+  <option hidden disabled selected>글자색을 선택하세요</option>
+  <option value="#ff69b4">핑크</option>
+  <option value="#00fa9a">초록</option>
+  <option value="#afeeee">하늘</option>
+  <option value="#ee82ee">보라</option>
+</select>
+<select id="selfont">
+  <option hidden disabled selected>글꼴을 선택하세요</option>
+  <option>Diphylleia</option>
+  <option>Gamja Flower</option>
+  <option>Gowun Dodum</option>
+  <option>Nanum Brush Script</option>
+</select>
+<select id="selsize">
+  <option hidden disabled selected>글자크기를 선택하세요</option>
+  <script>
+    for(let i=10;i<=40;i+=5)
+    {
+      let s=`<option>${i}px</option>`;
+      document.write(s);
+    }
+  </script>
+
+</select>
+<div id="msg" style="margin-top: 20px;font-size: 15px;">
+  Have a Nice Day<br>
+  오늘은 비가오는 월요일 입니다
+</div>
+<script>
+  let m=document.getElementById("msg");
+
+  //글자색
+  document.getElementById("selcolor").onchange=function (){
+    m.style.color=this.value;
+  }
+  let c=document.getElementById("msg");
+
+  //글자색
+  document.getElementById("selfont").onchange=function (){
+    c.style.fontFamily=this.value;
+  }
+  //글꼴
+
+  let d=document.getElementById("msg");
+
+  //글자색
+  document.getElementById("selsize").onchange=function (){
+    d.style.fontSize=this.value;
+  }
+</script>
+
+</body>
+</html>
