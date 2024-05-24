@@ -1,0 +1,34 @@
+*{
+
+margin: 0;padding: 0;}
+body {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    color: white;
+}
+
+#backImg{
+    position: absolute;
+    background-image: url("./img/14.avif"); opacity: 70%; size
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    z-index: -9999;
+}
+
+#start-page {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#main-page {
+    text-align: center;
+    display: none;
+}
+
+#result-page {
+    text-align: center;
+    display: none;
+}

@@ -15,7 +15,7 @@ public class Ex3_Switch {
 		{
 		case 1:
 			System.out.println("One!!");
-			break;
+			break; //브레이크를 걸어서 해당 조건문에서만 끝나게 한다
 		case 2:
 			System.out.println("Two!!");
 			break;

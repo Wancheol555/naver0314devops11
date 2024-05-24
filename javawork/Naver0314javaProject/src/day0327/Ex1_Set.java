@@ -31,7 +31,7 @@ public class Ex1_Set {
 			System.out.println(n);
 		}
 		System.out.println("**출력2**");
-		Iterator<Integer> iter=set1.iterator();
+		Iterator<Integer> iter=set1.iterator();//상속 안 됌
 		while(iter.hasNext())
 		{
 			System.out.println(iter.next());

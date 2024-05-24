@@ -1,0 +1,84 @@
+
+
+```html
+<!DOCTYPE html> <!-- HTML5 문서를 정의합니다. -->
+<html lang="en"> <!-- 문서의 기본 언어를 영어로 설정합니다. -->
+<head>
+  <meta charset="UTF-8"> <!-- 문서의 문자 인코딩을 UTF-8로 설정합니다. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 반응형 웹 디자인을 위해 뷰포트를 설정합니다. -->
+  <title>Document</title> <!-- 웹 페이지의 제목을 설정합니다. -->
+  <style>
+    span {
+      width: 50px; /* span 요소의 너비를 50px로 설정합니다. */
+      height: 50px; /* span 요소의 높이를 50px로 설정합니다. */
+      border: 1px solid black; /* span 요소의 테두리를 검은색 실선으로 설정합니다. */
+      margin-right: 5px; /* span 요소의 오른쪽 마진을 5px로 설정합니다. */
+      border-radius: 100px; /* span 요소의 테두리를 원형으로 만듭니다. */
+      display: inline-flex; /* flexbox를 사용하여 내부 요소를 인라인으로 정렬합니다. */
+      justify-content: center; /* 가로 방향으로 중앙 정렬합니다. */
+      align-items: center; /* 세로 방향으로 중앙 정렬합니다. */
+    }
+  </style>
+  <script>
+    window.onload = function(){ /* 웹 페이지가 로드되면 실행됩니다. */
+      document.getElementById("random").onclick=function(){ /* "random" ID를 가진 요소를 클릭하면 실행됩니다. */
+        let su = parseInt(document.getElementById("choice").value); /* "choice" ID를 가진 요소의 값을 정수로 변환합니다. */
+        let resultDiv = document.getElementById("result"); /* "result" ID를 가진 요소를 선택합니다. */
+        resultDiv.innerHTML = ""; // 이전 결과를 초기화합니다.
+
+        for(let w = 1; w <= su; w++){ /* 사용자가 선택한 수만큼 반복합니다. */
+          let arr = []; /* 번호를 저장할 배열을 초기화합니다. */
+          for(let i = 0; i < 6; i++){ /* 6개의 로또 번호를 생성합니다. */
+            let n = parseInt(Math.random()*45)+1; /* 1부터 45 사이의 랜덤 정수를 생성합니다. */
+            arr.push(n); /* 생성된 번호를 배열에 추가합니다. */
+          }
+          arr.sort(function(a, b) { return a - b; }); /* 배열을 오름차순으로 정렬합니다. */
+
+          let roundDiv = document.createElement("div"); /* 회차를 표시할 div 요소를 생성합니다. */
+          roundDiv.textContent = w + "회차"; /* 회차 정보를 설정합니다. */
+
+          for(let i = 0; i < arr.length; i++){ /* 생성된 로또 번호를 순회합니다. */
+            let numberSpan = document.createElement("span"); /* 번호를 표시할 span 요소를 생성합니다. */
+            numberSpan.textContent = arr[i]; /* span 요소에 번호를 설정합니다. */
+            // 랜덤 색상 생성
+            let randomColor = getRandomColor(); /* 랜덤 색상을 생성합니다. */
+            numberSpan.style.backgroundColor = randomColor; /* 생성된 색상을 배경색으로 설정합니다. */
+            roundDiv.appendChild(numberSpan); /* span 요소를 roundDiv에 추가합니다. */
+          }
+
+          resultDiv.appendChild(roundDiv); /* roundDiv를 resultDiv에 추가합니다. */
+        }
+      }
+    }
+
+    function getRandomColor() { /* 랜덤 색상을 생성하는 함수입니다. */
+      let letters = '0123456789ABCDEF'; // 색상 코드를 나타내기 위한 초기 문자열입니다. '#'으로 시작합니다
+      let color = '#';// 6자리 16진수 색상 코드를 생성하기 위해 6번 반복합니다.
+      for (let i = 0; i < 6; i++) {
+        // letters 문자열에서 무작위 인덱스의 문자를 선택하여 color에 추가합니다.
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      // 생성된 색상 코드를 반환합니다.
+      return color;
+    }
+  </script>
+</head>
+<body>
+<!-- 사용자가 선택할 수 있는 옵션을 제공하는 드롭다운 메뉴입니다. -->
+<select id="choice">
+  <!-- 각 옵션에는 1부터 5까지의 값을 가지는 5개의 선택지가 있습니다. -->
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+<!-- 사용자가 클릭할 수 있는 버튼입니다. '로또'라는 텍스트가 표시됩니다. -->
+<button type="button" id="random">로또</button>
+
+<!-- 함수 실행 결과나 메시지를 표시할 공간입니다. -->
+<div id="result"></div>
+</body>
+</html>
+
+

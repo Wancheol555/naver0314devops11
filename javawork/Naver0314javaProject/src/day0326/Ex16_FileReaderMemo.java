@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Ex16_FileReaderMemo {
-	static final String FILENAME2="d:/naver0314/memo2.txt";
+	static final String FILENAME2="d:/naver0314/memo2.txt"; //<--절대경로
 	static public void readMemo2()
 	{
 		BufferedReader br=null;
