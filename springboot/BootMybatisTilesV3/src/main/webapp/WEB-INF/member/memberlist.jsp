@@ -1,13 +1,12 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
-  User: wancheol
-  Date: 5/23/24
-  Time: 11:53 AM
+  User: qhal5
+  Date: 2024-05-23
+  Time: 오전 11:52
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
     <title>Title</title>
@@ -23,32 +22,53 @@
         }
     </style>
 </head>
+<c:set var="stpath" value="https://kr.object.ncloudstorage.com/bitcamp-bucket-56/photocommon"/>
 <body>
-<img src="<%=request.getContextPath()%>/mycar/mycar13.png" width="100">
-<h3 class="alert alert-success">총 ${totalCount}명의 회원이 있습니다</h3>
-<table class="table table-bordered" style="width: 700px">
-    <tr class="table-success">
-        <td>번호</td>
-        <td>회원명</td>
-        <td>아이디</td>
-        <td>핸드폰</td>
-        <td>상세보기</td>
-    </tr>
-
-    <c:forEach var="s" items="${list}" varStatus="i">
-        <tr>
-            <td>${s.num}</td>
-            <td><img src="../save/${s.photo}" style="width: 100px;height: 100px" onerror="this.src='../image/noimages1.jpeg'"> ${s.name}</td>
-            <td>${s.myid}</td>
-            <td>${s.hp}</td>
-            <td>
-                <button type="button" class="btn btn-sm btn-outline-secondary"
-                        onclick="location.href='./detail?num=${s.num}'">Detail</button>
-            </td>
+<h2 class="alert alert-danger" style="width: 600px">
+    총 ${totalCount}명의 회원이 있습니다
+    <span style="float: right">
+        <button type="button" class="btn btn-sm btn-success"
+                onclick="location.href='./form'">멤버등록</button>
+    </span>
+</h2>
+<%--<!-- amin 이 아닌계정으로 로그인을 했거나 로그인상태가 아닐경우 보여질 모세지-->--%>
+<%--<c:if test="${sessionScope.loginok==null or sessionScope.loginid!='admin'}">--%>
+<%--    <h2>--%>
+<%--        <b>--%>
+<%--            전체 회원 명단은 관리자만 확인가능해용~--%>
+<%--        </b>--%>
+<%--    </h2>--%>
+<%--</c:if>--%>
+<%--<!-- amin 계정으로 로그인시에만 전체 명단을 확인가능-->--%>
+<%--<c:if test="${sessionScope.loginok!=null and sessionScope.loginid=='admin'}">--%>
+    <table class="table table-striped" style="width: 600px">
+        <caption align="top">
+            <h2>회원정보</h2>
+        </caption>
+        <tr class="table-danger">
+            <th width="100">번호</th>
+            <th width="200">회원명</th>
+            <th width="100">아이디</th>
+            <th width="100">핸드폰</th>
+            <th width="100">상세보기</th>
         </tr>
-    </c:forEach>
-
-</table>
-
+        <c:forEach var="dto" items="${list}">
+            <tr>
+                <td>${dto.num}</td>
+                <td>
+                    <img src="${stpath}/${dto.photo}" class="rounded-circle" style="width: 30px; height: 30px;"
+                         onerror="this.src='../image/noimages1.jpeg'">
+                        ${dto.name}
+                </td>
+                <td>${dto.myid}</td>
+                <td>${dto.hp}</td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-info"
+                            onclick="location.href='./detail?num=${dto.num}'">Detail</button>
+                </td>
+            </tr>
+        </c:forEach>
+    </table>
+<%--</c:if>--%>
 </body>
 </html>
